@@ -1,0 +1,12 @@
+<h1>News</h1>
+{% for item in sourceData%}
+<li>
+
+<p>{{item.news_category}}</p>
+<p>{{item.news_name}}</p>
+<p>{{item.news_description}}</p>
+<p><a href="{{item.news_url}}">{{item.news_url}}</a></p>
+
+
+</li>
+{% endfor %}
