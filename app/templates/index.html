@@ -1,6 +1,12 @@
 <h1>Can you hear me?</h1>
 {% for item in data%}
 <li>
-    {{ item.news_author}}
+    <!-- {{ item.news_id }}
+    {{ item.news_author }} -->
+    {{ item.news_title }}
+    {{ item.news_description }}
+    {{ item.news_publishedAt }}
+    {{ item.news_url }}
+    {{ item.news_urlToImage }}
 </li>
 {% endfor %}
