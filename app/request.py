@@ -29,11 +29,11 @@ def get_sources(category):
 
 def process_sources(sources_list):
     '''
-    Function  that processes the movie result and transform them to a list of Objects
+    Function  that processes the news result and transform them to a list of Objects
     Args:
-        sources_list: A list of dictionaries that contain movie details
+        sources_list: A list of dictionaries that contain news details
     Returns :
-        sources_results: A list of movie objects
+        sources_results: A list of news objects
     '''
     sources_results = []
     for item in sources_list:

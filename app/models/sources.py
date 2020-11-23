@@ -1,6 +1,6 @@
 class Source:
     '''
-    source class to define sourceObjects
+    source class to define source objects
     '''
 
     def __init__(self,id,name,category,description,url):
