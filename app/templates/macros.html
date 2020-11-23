@@ -1,11 +1,11 @@
 {% macro displaySourcesList(sources_list) %}
-{% for source_row in sources_list |batch(4) %}
+{% for source_item in sources_list |batch(3) %}
 <div class="row ">
-    {% for sources in source_row %}
-    <div class="col-md-3">
+    {% for sources in source_item %}
+    <div class="col-md-4">
         <div class="" style="background-color: transparent">
-            <h4>{{sources.name}}</h4>
-            <p> {{sources.description |truncate(100)}}</p>
+            <h3>{{sources.name}}</h3>
+            <p> {{sources.description}}</p>
              <a href="/sources/{{sources.id}}">{{sources.name}}</a>
             </div>
             <hr>

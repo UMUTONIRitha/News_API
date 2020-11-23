@@ -1,23 +1,25 @@
 {% extends 'base.html' %}
 {% block content%}
 
-
+<h1 style="text-align: center;"> WORLD WIDE NEWS </h1>
 <div class="container">
-    {% for article_row in articles | batch(4)%}
+
+    {% for article_item in articles | batch(3)%}
     <div class="row">
-        {% for article in article_row%}
-        <div class="col-md-3">
-            <div class="thumbnail" style="background-color: transparent; text-align:center">
-                <a href="{{article.url}}" target="_blank"><img src="{{article.urlToImage}}" alt="{{article.title}}"
-                        class="img-responsive" style="height:100px"></a>
+        {% for article in article_item%}
+        <div class="col-md-4">
+            <div class="thumbnail">
+             <img src="{{article.urlToImage}}" alt="{{article.title}}"
+                        class="img-responsive" style="height:200px">
                 <div class="caption">
-                    <h4><a href="{{article.url}}" target="_blank">{{article.title | truncate(35)}}</a></h4>
-                    <p>{{article.decription | truncate(80)}}</p>
-                    <a href="{{article.url}}" target="_blank"><strong>View More</strong></a>
+                <h4><a href="{{article.url}}" target="_blank">{{article.title }}</a></h4>
+                  <p>{{article.description }}</p>
+                  <p>Posted:{{article.publishedAt}}</p> 
+                    <a href="{{article.url}}" target="_blank"><strong>Continue...</strong></a>
                 </div>
-                <div class="footer">
-                    Published at:{{article.publishedAt}}
-                </div>
+              
+                   
+               
             </div>
         </div>
         {%endfor%}
