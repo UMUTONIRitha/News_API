@@ -1,11 +1,11 @@
 # {News_API}
 
-#### {application that will help them list and preview news articles from various sources.}, {23 November 2020}
+#### {application that is used to list and preview news articles from various sources.}, {23 November 2020}
 #### By **{UMUTONI Marie Ritha}**
 
 ## Description
 
-{The News API (Links to an external site.) provides a wonderful API that will allow you to complete your task. Read the documentation in order to fully access the features of the API, learn how to use it and know how to implement features that are required for your project.. }
+{The News API (Links to an external site.) provides a wonderful API that will allow you to complete your task. Read the documentation in order to fully access the features of the API, learn how to use it and know how to implement features that are required for your project. }
 
 ## Cloning
 
@@ -31,6 +31,9 @@
 * As a user, I would also want to select a news source and see all news articles from the selected news source in the application.
 * As a user, I would want to see the image, description and the time a news article was created.
 * As a user, I would want to click on an article and read the full article on the source website.
+
+## Live link
+[Here is the link](https://umutoninewsapi.herokuapp.com/"News_API")
 
 ## How Password-Locker Project look
 
