@@ -1,64 +1,5 @@
 from app import app
 import urllib.request,json
-from .news import News
-from .sources import Source
-
-# Getting api key
-api_key = app.config['NEWS_API_KEY']
-source_url = app.config['SOURCES_API_LINK']
-# Getting the movie base url
-base_url = app.config["NEWS_API_LINK"]
-
-def my_source():
-    '''
-    Function that gets the json response to our url request
-    '''
-    get_source_url = source_url.format(api_key)
-    with urllib.request.urlopen(get_source_url) as url:
-        get_source_data = url.read()
-        get_source_response = json.loads(get_source_data)
-        source_results = []
-        if get_source_response['sources']:
-            source_results_list = get_source_response['sources']
-            # news_results = process_results(movie_results_list)
-            for item in source_results_list:  
-                category = item.get('category')
-                name = item.get('name')
-                description = item.get('description')
-                url = item.get('url')
-                # if poster:
-                source_object = Source(category,name,description,url)
-                source_results.append(source_object)
-            return source_results
-
-
-
-
-
-
-
-
-def my_news():
-    '''
-    Function that gets the json response to our url request
-    '''
-    get_news_url = base_url.format(api_key)
-    with urllib.request.urlopen(get_news_url) as url:
-        get_news_data = url.read()
-        get_news_response = json.loads(get_news_data)
-
-        news_results = []
-
-        if get_news_response['articles']:
-            news_results_list = get_news_response['articles']
-            # news_results = process_results(news_results_list)
-            for item in news_results_list:
-              
-                author = item.get('author')
-                title = item.get('title')
-                description = item.get('description')
-                publishedAt = item.get('publishefrom app import app
-import urllib.request,json
 from .models import sources,articles
 
 Source = sources.Source
@@ -131,13 +72,4 @@ def process_articles(articles_list):
         if urlToImage:
            articles_result=Article(title,description,url,urlToImage,publishedAt)
            articles_object.append(articles_result)
-    return articles_objectdAt')
-                url = item.get('url')
-                urlToImage = item.get('urlToImage')
-               
-
-                if urlToImage:
-
-                    news_object = News(author,title,description,publishedAt,url,urlToImage)
-                    news_results.append(news_object)
-            return news_results
+    return articles_object
