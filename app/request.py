@@ -65,7 +65,7 @@ def process_articles(articles_list):
     articles_object=[]
     for item in articles_list:
         title= item.get('title')
-        description = item.get('description ')
+        description = item.get('description')
         url = item.get('url')
         urlToImage = item.get('urlToImage')
         publishedAt = item.get('publishedAt')
