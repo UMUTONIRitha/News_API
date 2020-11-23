@@ -25,6 +25,8 @@ def get_sources(category):
             sources_results_list = get_sources_response['sources']
             sources_results = process_sources(sources_results_list)
     return sources_results
+
+
 def process_sources(sources_list):
     '''
     Function  that processes the movie result and transform them to a list of Objects
@@ -54,10 +56,14 @@ def get_articles(id):
     get_articles_url=articles_url.format(id,api_key)
     with urllib.request.urlopen(get_articles_url)as url:
         articles_results=json.loads(url.read())
+
         articles_object=None
+
         if articles_results['articles']:
             articles_object=process_articles(articles_results['articles'])
     return articles_object
+
+
 def process_articles(articles_list):
     '''
     function to list all articles
@@ -69,7 +75,9 @@ def process_articles(articles_list):
         url = item.get('url')
         urlToImage = item.get('urlToImage')
         publishedAt = item.get('publishedAt')
+
         if urlToImage:
+            
            articles_result=Article(title,description,url,urlToImage,publishedAt)
            articles_object.append(articles_result)
     return articles_object

@@ -1,5 +1,6 @@
 {% macro displaySourcesList(sources_list) %}
 {% for source_item in sources_list |batch(3) %}
+
 <div class="row ">
     {% for sources in source_item %}
     <div class="col-md-4">
